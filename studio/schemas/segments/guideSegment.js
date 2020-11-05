@@ -1,7 +1,7 @@
 export default {
-  name: 'grid',
-  title: 'Grid',
-  type: 'document',
+  name: 'guideSegment',
+  title: 'Guide Segment',
+  type: 'object',
   fields: [
     {
       name: 'idTag',
@@ -9,11 +9,6 @@ export default {
       type: 'string',
       description: 'Please use "-" in place of space',
       validation: (Rule) => [Rule.required().error('Field is required')],
-    },
-    {
-      name: 'leader',
-      title: 'Leader Text',
-      type: 'string',
     },
     {
       name: 'title',
@@ -45,7 +40,7 @@ export default {
       name: 'cards',
       title: 'Cards',
       type: 'array',
-      of: [{ type: 'reference', to:[{type: 'hero'}] }],
+      of: [{ type: 'reference', to: [{ type: 'guide' }] }],
       validation: (Rule) => [Rule.required().error('List must contain at least 1 item')],
     },
     {

@@ -1,7 +1,7 @@
 export default {
   name: 'ctaForm',
   title: 'CTA Form',
-  type: 'document',
+  type: 'object',
   fields: [
     {
       name: 'idTag',

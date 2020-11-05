@@ -1,5 +1,7 @@
+export { default as brand } from './brand';
 export { default as comapnyLogo } from './comapnyLogo';
-export { default as mainNavbar } from './mainNavbar';
+export { default as companyInfo } from './companyInfo';
+export { default as guide } from './guide';
 export { default as navMenu } from './navMenu';
 export { default as page } from './page';
 export { default as redirect } from './redirect';
