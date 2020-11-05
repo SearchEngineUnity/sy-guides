@@ -5,12 +5,12 @@ export default {
     {
       name: 'mainImage',
       title: 'Main Image',
-      type: 'image',
+      type: 'illustration',
     },
     {
       name: 'secondaryImage',
       title: 'Secondary Image',
-      type: 'image',
+      type: 'illustration',
     },
   ],
 };

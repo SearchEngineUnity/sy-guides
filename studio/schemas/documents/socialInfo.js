@@ -20,11 +20,13 @@ export default {
           { title: 'LinkedIn', value: 'linkedin' },
         ],
       },
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'link',
       title: 'Link',
       type: 'url',
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
   ],
   preview: {

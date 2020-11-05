@@ -33,8 +33,6 @@ export default {
       type: 'redirectTo._type',
     },
     prepare({ slug, type }) {
-
-
       return {
         title: `/${slug}`,
       };

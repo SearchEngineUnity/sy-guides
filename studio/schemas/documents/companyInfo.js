@@ -11,6 +11,7 @@ export default {
       name: 'name',
       title: 'Company name',
       type: 'string',
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'email',

@@ -1,8 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { MdSettings, MdBusiness } from 'react-icons/md';
-import { BsInfoSquare } from 'react-icons/bs';
+import { HiOutlineOfficeBuilding } from 'react-icons/hi';
 import { AiOutlineGlobal } from 'react-icons/ai';
-import { FiNavigation2 } from 'react-icons/fi';
 
 export default () =>
   S.list()
@@ -14,7 +13,7 @@ export default () =>
         .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
       S.listItem()
         .title('Company Info')
-        .icon(BsInfoSquare)
+        .icon(HiOutlineOfficeBuilding)
         .child(
           S.list()
             .title('Company Info')
@@ -34,14 +33,12 @@ export default () =>
           S.list()
             .title('Website')
             .items([
-              S.listItem()
-                .title('Main Navigation')
-                .icon(FiNavigation2)
-                .child(
-                  S.document().schemaType('mainNavbar').documentId('mainNavbar').title('Main Nav'),
-                ),
+              S.documentTypeListItem('navMenu').title('Navigation Menus'),
               S.documentTypeListItem('page').title('Structured Pages'),
+              S.documentTypeListItem('redirect').title('Redirects'),
             ]),
         ),
-      S.documentTypeListItem('redirect').title('Redirects'),
+      S.divider(),
+      S.documentTypeListItem('guide').title('Guides'),
+      S.documentTypeListItem('brand').title('Brands'),
     ]);
