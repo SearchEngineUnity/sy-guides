@@ -6,17 +6,23 @@ import JumpLinkRenderer from '../components/JumpLinkRenderer';
 import InlineImageRenderer from '../components/InlineImageRenderer';
 
 export default {
-  name: 'simpleBlockContent',
+  title: 'Block Content',
+  name: 'fullBlockContent',
   type: 'array',
   of: [
     {
       type: 'block',
-      styles: [],
+      styles: [
+        { title: 'Normal', value: 'normal' },
+        { title: 'Heading 1', value: 'h1' },
+        { title: 'H2', value: 'h2' },
+        { title: 'H3', value: 'h3' },
+        { title: 'H4', value: 'h4' },
+        { title: 'H5', value: 'h5' },
+        { title: 'H6', value: 'h6' },
+        { title: 'Quote', value: 'blockquote' },
+      ],
       marks: {
-        decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
-        ],
         annotations: [
           {
             title: 'External Link',
@@ -85,6 +91,21 @@ export default {
           },
         ],
       },
+    },
+    // You can add additional types here. Note that you can't use
+    // primitive types such as 'string' and 'number' in the same array
+    // as a block type.
+    {
+      type: 'illustration',
+    },
+    {
+      type: 'basicTable',
+    },
+    {
+      type: 'smartTable',
+    },
+    {
+      type: 'highlightBox',
     },
   ],
 };

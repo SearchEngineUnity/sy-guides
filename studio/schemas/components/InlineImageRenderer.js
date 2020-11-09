@@ -11,11 +11,7 @@ const InlineImageRenderer = ({ asset, children }) => {
 
     return (
       <span>
-        <img src={`${imageCdn}${image}`} style={{ width: '100%', height: 'auto' }} alt="inline" />
-        <span>
-          Alt text:
-          {children}
-        </span>
+        <img src={`${imageCdn}${image}`} alt={children} />
       </span>
     );
   }

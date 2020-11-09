@@ -40,5 +40,6 @@ export default () =>
         ),
       S.divider(),
       S.documentTypeListItem('guide').title('Guides'),
-      S.documentTypeListItem('brand').title('Brands'),
+      S.documentTypeListItem('app').title('Apps'),
+      S.documentTypeListItem('os').title('OS'),
     ]);

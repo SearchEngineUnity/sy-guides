@@ -1,6 +1,10 @@
+export { rowPlus, smartTable, tableBlock, tableBlockContent, tablePlus } from './smartTable';
+export { default as basicTable } from './basicTable';
 export { default as ctaButton } from './ctaButton';
 export { default as externalLink } from './externalLink';
 export { default as form } from './form';
+export { default as fullBlockContent } from './fullBlockContent';
+export { default as highlightBox } from './highlightBox';
 export { default as illustration } from './illustration';
 export { default as imageSet } from './imageSet';
 export { default as input } from './input';
@@ -15,3 +19,4 @@ export { default as simpleBlockContent } from './simpleBlockContent';
 export { default as textarea } from './textarea';
 export { default as textBlock } from './textBlock';
 export { default as twitterTag } from './twitterTag';
+export { default as video } from './video';

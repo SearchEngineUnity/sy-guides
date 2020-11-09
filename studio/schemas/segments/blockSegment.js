@@ -1,6 +1,6 @@
 export default {
-  name: 'ctaForm',
-  title: 'CTA Form',
+  name: 'blockSegment',
+  title: 'Block Segment',
   type: 'object',
   fields: [
     {
@@ -11,26 +11,15 @@ export default {
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-      validation: (Rule) => [Rule.required().error('Field is required')],
-    },
-    {
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'text',
-    },
-    {
-      name: 'form',
-      title: 'Form builder',
-      type: 'form',
+      name: 'content',
+      title: 'Content',
+      type: 'fullBlockContent',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'idTag',
       subtitle: '_type',
     },
   },

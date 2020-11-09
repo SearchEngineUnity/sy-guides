@@ -9,14 +9,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import MainFooter from '../components/MainFooter';
-import MainNav from '../components/MainNav';
-import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
 import GlobalStyle from '../global/GlobalStyle';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query FooterQuery {
+    query LayoutQuery {
       sanityCompanyInfo {
         _key
         address1
@@ -26,20 +23,50 @@ const Layout = ({ children }) => {
         province
         name
       }
-      sanityMainNavbar {
+      sanityNavMenu(title: { eq: "Main Navigation" }) {
+        title
+        _id
+        menu {
+          ... on SanityNavBrand {
+            _key
+            _type
+            nav {
+              slug {
+                current
+              }
+            }
+            brand {
+              title
+              logo {
+                asset {
+                  url
+                }
+              }
+            }
+          }
+          ... on SanityNavJumpLink {
+            _key
+            _type
+            link
+            title
+            isButton
+          }
+        }
+      }
+      allSanitySocialInfo {
+        edges {
+          node {
+            _id
+            social
+            link
+          }
+        }
+      }
+      sanityCompanyLogo(title: { eq: "Sunny Guides logo white" }) {
         title
         logo {
           asset {
             url
-          }
-        }
-        menu {
-          ... on SanityNavJumpLink {
-            _key
-            _type
-            isButton
-            link
-            title
           }
         }
       }
@@ -71,9 +98,9 @@ const Layout = ({ children }) => {
         /> */}
       </Helmet>
       <GlobalStyle />
-      <MainNav {...mapMainNavToProps(data.sanityMainNavbar)} />
+      <div>Main Nagivation</div>
       <>{children}</>
-      <MainFooter {...mapMainFooterToProps(data.sanityCompanyInfo)} />
+      <div>Footer</div>
     </>
   );
 };

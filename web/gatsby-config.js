@@ -6,7 +6,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://searchengineunity.com', // update to new netlify URL
+  URL: NETLIFY_SITE_URL = 'https://sunnyguides.ca', // update to new netlify URL
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env;
@@ -49,7 +49,7 @@ module.exports = {
         start_url: `/`,
         lang: `en`,
         display: `standalone`,
-        icon: `src/images/SEU-favicon-transparent.png`, // This path is relative to the root of the site.
+        icon: `src/images/SY_favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-remove-serviceworker`,

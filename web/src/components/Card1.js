@@ -1,21 +1,27 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
-const PaddedDiv = styled.div`
-  margin-bottom: 30px;
-`;
-function Card1({ title, col, icons }) {
+function Card1({ idTag, pdfURL, appName, appIcon, osName, osIcon, osDevice }) {
   return (
-    <PaddedDiv className={`align-items-stretch ${col}`}>
-      <Card>
-        <Card.Header>{title}</Card.Header>
-        <Card.Body>
-          <Card.Title>{icons}</Card.Title>
-          <Button variant="primary">Download Guide</Button>
-        </Card.Body>
-      </Card>
-    </PaddedDiv>
+    <Card id={idTag}>
+      <Card.Header>
+        <span>{appName}</span> for <span>{osName}</span> ({osDevice})
+      </Card.Header>
+      <Card.Body>
+        <Row className="justify-content-center">
+          <Col>
+          <img src={appIcon} alt={appName} loading="lazy"></img>
+        <Card.Title>{appName}</Card.Title>
+          </Col>
+          <Col>
+          <img src={osIcon} alt={osName} loading="lazy"/>
+          <Card.Title>{osName}</Card.Title>
+          </Col>
+        </Row>
+        <Button variant="primary">Download Guide</Button>
+      </Card.Body>
+    </Card>
   );
 }
 export default Card1;
