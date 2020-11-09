@@ -18,7 +18,7 @@ export default {
     {
       name: 'subtitle',
       title: 'Subtitle',
-      type: 'text',
+      type: 'simpleBlockContent',
     },
     {
       name: 'heroMedia',
@@ -36,17 +36,6 @@ export default {
       name: 'heroBg',
       title: 'Hero Background Color',
       type: 'color',
-    },
-    {
-      name: 'layout',
-      type: 'string',
-      title: 'Layout',
-      options: {
-        list: [
-          { title: 'H1, Image, Subtitle', value: '1' },
-          { title: 'H1, Subtitle, Image', value: '2' },
-        ],
-      },
     },
   ],
   preview: {

@@ -22,15 +22,13 @@ export default {
       name: 'software',
       title: 'Software',
       type: 'reference',
-      to: [{ type: 'brand' }],
-      validation: (Rule) => [Rule.required().error('Field is required')],
+      to: [{ type: 'app' }],
     },
     {
       name: 'platform',
       title: 'Platform',
       type: 'reference',
-      to: [{ type: 'brand' }],
-      validation: (Rule) => [Rule.required().error('Field is required')],
+      to: [{ type: 'os' }],
     },
   ],
   preview: {
