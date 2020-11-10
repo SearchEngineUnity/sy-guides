@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
 import MainFooter from '../components/MainFooter';
+import CookieConsent from '../components/CookieConsent';
 import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
 
 const Layout = ({ children }) => {
@@ -110,6 +111,7 @@ const Layout = ({ children }) => {
           data.allSanitySocialInfo,
         )}
       />
+      <CookieConsent />
     </>
   );
 };

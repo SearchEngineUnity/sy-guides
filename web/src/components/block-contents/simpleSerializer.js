@@ -8,24 +8,12 @@ const Hyperlink = styled.a`
     font-weight: bold;
     color: #2664b0;
   }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: #fcce09;
-  }
 `;
 
 const GatsbyLink = styled(Link)`
   &:link {
     font-weight: bold;
     color: #2664b0;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: #fcce09;
   }
 `;
 

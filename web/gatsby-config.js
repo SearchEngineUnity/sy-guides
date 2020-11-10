@@ -65,7 +65,11 @@ module.exports = {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{ userAgent: '*', allow: ['/'] }],
+            policy: [
+              { userAgent: '*', disallow: ['/404'] },
+              { userAgent: '*', disallow: ['/thank-you'] },
+              { userAgent: '*', disallow: ['/privacy-policy'] },
+            ],
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
@@ -103,6 +107,21 @@ module.exports = {
       options: {
         // Add any options here
         pure: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+          // Setting this parameter is optional
+          anonymize: true,
+        },
+        facebookPixel: {
+          pixelId: 'YOUR_FACEBOOK_PIXEL_ID',
+        },
+        // Defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development'],
       },
     },
   ],

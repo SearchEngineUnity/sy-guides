@@ -13,7 +13,7 @@ function Hero({ id, title, media, subtitle }) {
       <h1 style={{ color: '#2664B0' }}>{title}</h1>
       {media._type === 'illustration' && (
         <Row>
-          <Col xs="12" md="8" className="mx-auto">
+          <Col xs={12} md={8} lg={7} className="mx-auto">
             <img
               src={media.asset.url}
               alt={media.alt}

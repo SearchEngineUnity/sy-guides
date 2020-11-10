@@ -77,7 +77,7 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <div style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
       <Helmet>
         <script
           rel="preload"
@@ -102,7 +102,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <GlobalStyle />
       <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
-      <>{children}</>
+      <div style={{ flex: '1' }}>{children}</div>
       <AltFooter
         {...mapMainFooterToProps(
           data.sanityCompanyInfo,
@@ -110,7 +110,7 @@ const Layout = ({ children }) => {
           data.allSanitySocialInfo,
         )}
       />
-    </>
+    </div>
   );
 };
 

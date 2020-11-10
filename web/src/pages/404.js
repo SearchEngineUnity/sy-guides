@@ -42,24 +42,26 @@ const PageNotFound = () => {
 
   return (
     <Layout>
-      <SEO title="404 - Page not found" />
-      <Container>
-        <h1 style={{ color: '#2664B0' }}>
-          Uh oh! We can’t find the Sunny page you’re looking for.
-        </h1>
+      <SEO title="404 - Page not found" nofollow noindex />
+      <Container className="text-center">
         <Row>
-          <Col xs="10" sm="8" md="5" lg="4" className="mx-auto">
-            <img src={Cloud} alt="Cloud is sad that you are lost." />
+          <Col lg={8} md={8} xs={11} className="mx-auto">
+            <h1 style={{ color: '#2664B0' }}>
+              Uh oh! We can’t find the Sunny page you’re looking for.
+            </h1>
+            <Row>
+              <Col xs={10} sm={8} md={8} lg={6} className="mx-auto">
+                <img src={Cloud} alt="Cloud is sad that you are lost." />
+              </Col>
+            </Row>
+            <p>The page may have moved, been an old link, or affected by cloudy weather.</p>
+
+            <br />
+            <p style={{ fontWeight: 'bold' }}>
+              &gt; <GatsbyLink to="/">Return to home page</GatsbyLink>
+            </p>
           </Col>
         </Row>
-        <p>The page may have moved, been an old link, or affected by cloudy weather.</p>
-
-        <br />
-        <p style={{ fontWeight: 'bold' }}>
-          &gt; <GatsbyLink to="/">Return to home page</GatsbyLink>
-        </p>
-        <br />
-        <br />
       </Container>
     </Layout>
   );
