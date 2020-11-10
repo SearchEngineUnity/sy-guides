@@ -22,6 +22,11 @@ export default {
       type: 'text',
     },
     {
+      name: 'disclaimer',
+      title: 'Disclaimer',
+      type: 'simpleBlockContent',
+    },
+    {
       name: 'form',
       title: 'Form builder',
       type: 'form',

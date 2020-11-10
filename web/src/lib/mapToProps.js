@@ -56,13 +56,12 @@
 //     })),
 //   };
 // }
-export function mapHeroToProps({ idTag, title, _rawText, backgroundImage, backgroundColor }) {
+export function mapHeroToProps({ idTag, title, heroMedia, _rawSubtitle }) {
   return {
     id: idTag,
     title,
-    heroText: _rawText,
-    imageURL: backgroundImage?.asset?.url,
-    backgroundColor: backgroundColor?.hex,
+    media: heroMedia[0],
+    subtitle: _rawSubtitle,
   };
 }
 // export function mapPartnerCollectionToProps({ partners, title, width }) {
@@ -167,12 +166,13 @@ export function mapGuideHeroToProps({ h1, author, displayDate, heroImage }) {
     image: heroImage?.mainImage?.image?.asset?.url,
   };
 }
-export function mapCtaFormToProps({ idTag, title, subtitle, form }) {
+export function mapCtaFormToProps({ idTag, title, subtitle, form, _rawDisclaimer }) {
   return {
     id: idTag,
     title,
     subtitle,
     form,
+    disclaimer: _rawDisclaimer,
   };
 }
 
@@ -205,21 +205,17 @@ export function mapCtaFormToProps({ idTag, title, subtitle, form }) {
 //   };
 // }
 
-// export function mapMainFooterToProps({ address1, city, email, postalCode, province, name }) {
-//   return {
-//     address: address1,
-//     city,
-//     email,
-//     postalCode,
-//     province,
-//     name,
-//   };
-// }
-
-export function mapMainNavToProps({ title, logo, menu }) {
+export function mapMainFooterToProps({ name }, { title, logo }, allSanitySocialInfo) {
   return {
-    name: title,
-    logo: logo?.asset?.url,
+    name,
+    logo: logo.asset.url,
+    brandName: title,
+    social: allSanitySocialInfo.edges,
+  };
+}
+
+export function mapMainNavToProps({ menu }) {
+  return {
     menu,
   };
 }

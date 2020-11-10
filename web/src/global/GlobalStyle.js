@@ -68,7 +68,7 @@ export default createGlobalStyle`
   }
 
   input, textara {
-    border-color: #D4D2D9;
+    border-color: #BBBDBF;
   }
 
   button:focus, a:focus {
@@ -90,7 +90,7 @@ export default createGlobalStyle`
   .form-control:focus, .form-control:active, .form-control:hover {
     box-shadow: none;
     -webkit-box-shadow: none;
-    border: #0a7b86 solid 1px;
+    border: #2664B0 solid 1px;
   }
 
   @media screen and (min-width: 576px) {

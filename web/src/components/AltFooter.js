@@ -28,7 +28,7 @@ const Hyperlink = styled.a`
   }
 `;
 
-function MainFooter({ name, logo, brandName, social }) {
+function AltFooter({ name, logo, brandName, social }) {
   return (
     <Footer>
       <Container style={{ fontSize: '14px', color: 'white', fontWeight: 'normal' }}>
@@ -37,14 +37,6 @@ function MainFooter({ name, logo, brandName, social }) {
             className="col-auto mr-auto"
             style={{ display: 'flex', flexDirection: 'column', paddingBottom: '24px' }}
           >
-            <p>
-              <Hyperlink href="/privacy-policy" target="_blank" rel="noreferrer">
-                Privacy Policy
-              </Hyperlink>
-            </p>
-            <p>
-              <Hyperlink href="#contact-us">Contact</Hyperlink>
-            </p>
             <div style={{ flex: '1 0 auto' }} />
             <div>
               {social.map(({ node }) => {
@@ -119,4 +111,4 @@ function MainFooter({ name, logo, brandName, social }) {
     </Footer>
   );
 }
-export default MainFooter;
+export default AltFooter;
