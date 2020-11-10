@@ -3,7 +3,14 @@ import { graphql } from 'gatsby';
 import Layout from '../containers/layout';
 import SEO from '../components/Seo';
 import Grid from '../components/Grid';
-import { mapSeoToProps, mapGuideSegmentToProps } from '../lib/mapToProps';
+import Hero from '../components/Hero';
+import Form from '../components/CtaForm';
+import {
+  mapSeoToProps,
+  mapGuideSegmentToProps,
+  mapHeroToProps,
+  mapCtaFormToProps,
+} from '../lib/mapToProps';
 // eslint-disable-next-line import/prefer-default-export
 export const query = graphql`
   query PageTemplate($slug: String) {
@@ -152,9 +159,9 @@ export default ({ data }) => {
             case 'guideSegment':
               return <Grid key={segment._key} {...mapGuideSegmentToProps(segment)} />;
             case 'ctaForm':
-              return <div>This is a cta form</div>;
+              return <Form key={segment._key} {...mapCtaFormToProps(segment)} />;
             case 'hero':
-              return <div>This is the hero</div>;
+              return <Hero key={segment._key} {...mapHeroToProps(segment)} />;
             default:
               return <div key="default"> Still under development</div>;
           }

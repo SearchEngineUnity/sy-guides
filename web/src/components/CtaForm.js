@@ -3,36 +3,30 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Subtitle = styled.p`
-  font-size: 1.75rem;
-`;
-
-const StyledLabel = styled(Form.Label)`
-  font-weight: bold;
-`;
+const StyledLabel = styled(Form.Label)``;
 
 const StyledButton = styled(Button)`
-  padding: 0.5rem 2rem;
-  background-color: #0a7b86;
-  border: #0a7b86 solid 4px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 9.5px 32px;
+  background-color: #f26b32;
+  border: none;
   border-radius: 4px;
-  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
 
   &:hover,
   &:focus {
-    background-color: #086068;
-    color: white;
-    font-weight: normal;
-    border: #086068 solid 4px;
-    box-shadow: none;
+    background-color: #ce470d;
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 6px #00000029;
   }
 
   &.active,
   &:active {
-    background-color: #086068 !important;
-    border: #086068 solid 4px !important;
-    color: white !important;
-    box-shadow: none !important;
+    color: #ce470d !important;
+    background-color: white !important;
+    border: solid 2px #ce470d !important;
+    box-shadow: 0px 3px 6px #00000029 !important;
   }
 `;
 
@@ -86,11 +80,13 @@ function CtaForm({ id, title, subtitle, form }) {
   };
 
   return (
-    <Container id={`${id}`} as="section">
+    <Container id={id} as="section">
+      <h2 className="text-center" style={{ color: '#2664B0', fontWeight: 'normal' }}>
+        {title}
+      </h2>
+      {subtitle && <p className="text-center">{subtitle}</p>}
       <Row>
         <Col className="mx-auto" lg={8}>
-          <h2 className="text-center">{title}</h2>
-          {subtitle && <Subtitle className="text-center">{subtitle}</Subtitle>}
           <Form
             name={form.name}
             method="POST"

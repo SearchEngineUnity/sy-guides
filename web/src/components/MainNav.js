@@ -20,8 +20,9 @@ const CustomNav = styled(Nav)`
 `;
 
 const StyledButton = styled(Button)`
-  font-size: 18px;
-  padding: 10.5px 32px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 9.5px 32px;
   background-color: #f26b32;
   border: none;
   border-radius: 4px;
@@ -43,20 +44,8 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const CustomBurger = styled(Navbar.Toggle)`
-  border: none;
-  outline: none;
-  color: #2c2142 !important;
-  padding: 0;
-  font-size: 1rem;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
 const CustomNavbar = styled(Navbar)`
-  padding: 0 15px;
+  padding: 0 0;
 `;
 
 const CustomA = styled.a`
@@ -93,13 +82,11 @@ function NavTypeA({ menu }) {
     setOpen(false);
   };
 
-  console.log(menu);
   const navBrand = menu.filter((x) => x._type === 'navBrand')[0];
   const navMenu = menu.filter((x) => x._type !== 'navBrand');
-  console.log(navMenu);
 
   return (
-    <Container className="px-0">
+    <Container>
       <CustomNavbar collapseOnSelect expand="xs" className="text-center">
         <Navbar.Brand className="my-3">
           <Link to="/" onClick={() => homeHandler()}>
@@ -116,13 +103,9 @@ function NavTypeA({ menu }) {
             case 'navJumpLink':
               return (
                 <CustomNav key={item.link}>
-                  <CustomA
-                    href={`#${item.link}`}
-                    onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}
-                    className="py-3"
-                  >
+                  <a href={`#${item.link}`} onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}>
                     {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
-                  </CustomA>
+                  </a>
                 </CustomNav>
               );
             default:

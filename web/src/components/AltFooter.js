@@ -31,7 +31,6 @@ const Hyperlink = styled.a`
 `;
 
 function AltFooter({ name, logo, brandName, social }) {
-  console.log(social);
   return (
     <Footer>
       <Container
