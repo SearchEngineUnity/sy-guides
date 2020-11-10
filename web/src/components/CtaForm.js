@@ -10,9 +10,9 @@ const StyledLabel = styled(Form.Label)``;
 const StyledButton = styled(Button)`
   font-size: 14px;
   font-weight: bold;
-  padding: 9.5px 32px;
+  padding: 7.5px 30px;
   background-color: #f26b32;
-  border: none;
+  border: solid 2px #f26b32;
   border-radius: 4px;
   transition: transform 0.5s ease;
 
@@ -21,6 +21,7 @@ const StyledButton = styled(Button)`
     background-color: #ce470d;
     transform: translateY(-5px);
     box-shadow: 0px 3px 6px #00000029;
+    border: solid 2px #ce470d;
   }
 
   &.active,
@@ -84,12 +85,16 @@ function CtaForm({ id, title, subtitle, form, disclaimer }) {
 
   return (
     <Container id={id} as="section">
-      <h2 className="text-center" style={{ color: '#2664B0', fontWeight: 'normal' }}>
-        {title}
-      </h2>
-      {subtitle && <p className="text-center">{subtitle}</p>}
       <Row>
-        <Col className="mx-auto" lg={8}>
+        <Col xs={12} sm={10} className="mx-auto">
+          <h2 className="text-center" style={{ color: '#2664B0', fontWeight: 'normal' }}>
+            {title}
+          </h2>
+          {subtitle && <p className="text-center">{subtitle}</p>}
+        </Col>
+      </Row>
+      <Row>
+        <Col className="mx-auto" lg={6} sm={10} xs={12}>
           <Form
             name={form.name}
             method="POST"

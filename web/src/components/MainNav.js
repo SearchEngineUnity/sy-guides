@@ -22,9 +22,9 @@ const CustomNav = styled(Nav)`
 const StyledButton = styled(Button)`
   font-size: 14px;
   font-weight: bold;
-  padding: 9.5px 32px;
+  padding: 7.5px 30px;
   background-color: #f26b32;
-  border: none;
+  border: solid 2px #f26b32;
   border-radius: 4px;
   transition: transform 0.5s ease;
 
@@ -33,6 +33,7 @@ const StyledButton = styled(Button)`
     background-color: #ce470d;
     transform: translateY(-5px);
     box-shadow: 0px 3px 6px #00000029;
+    border: solid 2px #ce470d;
   }
 
   &.active,
