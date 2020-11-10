@@ -18,6 +18,7 @@ export default {
           { title: 'Instagram', value: 'instagram' },
           { title: 'Pinterest', value: 'pinterest' },
           { title: 'LinkedIn', value: 'linkedin' },
+          { title: 'Youtube', value: 'youtube' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -45,6 +46,8 @@ export default {
           return { title: 'Pinterest' };
         case 'linkedin':
           return { title: 'LinkedIn' };
+        case 'youtube':
+          return { title: 'Youtube' };
         default:
           return { title: 'Error' };
       }

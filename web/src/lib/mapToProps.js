@@ -205,21 +205,17 @@ export function mapCtaFormToProps({ idTag, title, subtitle, form }) {
 //   };
 // }
 
-// export function mapMainFooterToProps({ address1, city, email, postalCode, province, name }) {
-//   return {
-//     address: address1,
-//     city,
-//     email,
-//     postalCode,
-//     province,
-//     name,
-//   };
-// }
-
-export function mapMainNavToProps({ title, logo, menu }) {
+export function mapMainFooterToProps({ name }, { title, logo }, allSanitySocialInfo) {
   return {
-    name: title,
-    logo: logo?.asset?.url,
+    name,
+    logo: logo.asset.url,
+    brandName: title,
+    social: allSanitySocialInfo.edges,
+  };
+}
+
+export function mapMainNavToProps({ menu }) {
+  return {
     menu,
   };
 }

@@ -4,44 +4,13 @@ import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 import scrollToElement from 'scroll-to-element';
 import styled from 'styled-components';
 
-const GreyContainer = styled(Container)`
-  background-color: #f2f2f2;
-  display: flex;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0px 4px 6px #00000029;
-  overflow: hidden;
-`;
-
 const BrandImg = styled.img`
   width: auto;
-  height: 1.6rem;
+  height: 48px;
 `;
 
 const CustomNav = styled(Nav)`
   margin-left: auto;
-  color: #2c2142;
-
-  @media screen and (max-width: 991px) {
-    background: white;
-    overflow: hidden;
-    margin-left: -140.5px;
-    padding-left: 140.5px;
-    margin-right: -140.5px;
-    padding-right: 140.5px;
-    border-bottom: 2px solid #f2f2f2;
-  }
-
-  @media screen and (max-width: 575px) {
-    background: white;
-    overflow: hidden;
-    margin-left: -81px;
-    padding-left: 81px;
-    margin-right: -81px;
-    padding-right: 81px;
-  }
 
   &:hover {
     @media screen and (max-width: 991px) {
@@ -51,24 +20,26 @@ const CustomNav = styled(Nav)`
 `;
 
 const StyledButton = styled(Button)`
-  padding: 0.5rem 1rem;
-  background-color: #0a7b86;
+  font-size: 18px;
+  padding: 10.5px 32px;
+  background-color: #f26b32;
   border: none;
   border-radius: 4px;
+  transition: transform 0.5s ease;
 
-  &:hover {
-    background-color: #086068;
-  }
-
+  &:hover,
   &:focus {
-    background-color: #086068;
-    box-shadow: none;
+    background-color: #ce470d;
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 6px #00000029;
   }
 
   &.active,
   &:active {
-    background-color: #086068 !important;
-    box-shadow: none !important;
+    color: #ce470d !important;
+    background-color: white !important;
+    border: solid 2px #ce470d !important;
+    box-shadow: 0px 3px 6px #00000029 !important;
   }
 `;
 
@@ -86,25 +57,6 @@ const CustomBurger = styled(Navbar.Toggle)`
 
 const CustomNavbar = styled(Navbar)`
   padding: 0 15px;
-`;
-
-const CustomCollapse = styled(Navbar.Collapse)`
-  @media screen and (max-width: 991px) {
-    overflow: hidden;
-    margin-left: -140.5px;
-    padding-left: 140.5px;
-    margin-right: -140.5px;
-    padding-right: 140.5px;
-  }
-
-  @media screen and (max-width: 575px) {
-    background: white;
-    overflow: hidden;
-    margin-left: -81px;
-    padding-left: 81px;
-    margin-right: -81px;
-    padding-right: 81px;
-  }
 `;
 
 const CustomA = styled.a`
@@ -126,7 +78,7 @@ const CustomA = styled.a`
   }
 `;
 
-function NavTypeA({ name, logo, menu }) {
+function NavTypeA({ menu }) {
   const [open, setOpen] = useState(false);
 
   const jumpLinkOnClickHandler = (id) => {
@@ -141,35 +93,44 @@ function NavTypeA({ name, logo, menu }) {
     setOpen(false);
   };
 
+  console.log(menu);
+  const navBrand = menu.filter((x) => x._type === 'navBrand')[0];
+  const navMenu = menu.filter((x) => x._type !== 'navBrand');
+  console.log(navMenu);
+
   return (
-    <GreyContainer fluid className="px-0">
-      <Container className="align-self-center px-0">
-        <CustomNavbar collapseOnSelect expand="lg" className="text-center">
-          <Navbar.Brand className="my-3">
-            <Link to="/" onClick={() => homeHandler()}>
-              <BrandImg loading="eager" alt={name} src={logo} className="d-inline-block" />
-            </Link>
-          </Navbar.Brand>
-          {/* still need to figure out toggle icon swap */}
-          <CustomBurger aria-controls="basic-navbar-nav" onClick={() => setOpen(!open)}>
-            {open ? <i className="fas fa-times fa-2x" /> : <i className="fas fa-bars fa-2x" />}
-          </CustomBurger>
-          <CustomCollapse id="basic-navbar-nav" in={open}>
-            {menu.map((item) => (
-              <CustomNav key={item.link}>
-                <CustomA
-                  href={`#${item.link}`}
-                  onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}
-                  className="py-3"
-                >
-                  {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
-                </CustomA>
-              </CustomNav>
-            ))}
-          </CustomCollapse>
-        </CustomNavbar>
-      </Container>
-    </GreyContainer>
+    <Container className="px-0">
+      <CustomNavbar collapseOnSelect expand="xs" className="text-center">
+        <Navbar.Brand className="my-3">
+          <Link to="/" onClick={() => homeHandler()}>
+            <BrandImg
+              loading="eager"
+              alt={navBrand.brand.title}
+              src={navBrand.brand.logo.asset.url}
+              className="d-inline-block"
+            />
+          </Link>
+        </Navbar.Brand>
+        {navMenu.map((item) => {
+          switch (item._type) {
+            case 'navJumpLink':
+              return (
+                <CustomNav key={item.link}>
+                  <CustomA
+                    href={`#${item.link}`}
+                    onClick={() => jumpLinkOnClickHandler(`#${item.link}`)}
+                    className="py-3"
+                  >
+                    {item.isButton ? <StyledButton>{item.title}</StyledButton> : item.title}
+                  </CustomA>
+                </CustomNav>
+              );
+            default:
+              return <div>Menu item</div>;
+          }
+        })}
+      </CustomNavbar>
+    </Container>
   );
 }
 

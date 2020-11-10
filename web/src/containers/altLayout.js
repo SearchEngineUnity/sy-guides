@@ -11,12 +11,11 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
-import MainFooter from '../components/MainFooter';
-import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
+import { mapMainNavToProps } from '../lib/mapToProps';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query LayoutQuery {
+    query AltLayoutQuery {
       sanityCompanyInfo {
         _key
         address1
@@ -26,7 +25,7 @@ const Layout = ({ children }) => {
         province
         name
       }
-      sanityNavMenu(title: { eq: "Main Navigation" }) {
+      sanityNavMenu(title: { eq: "Alt Navigation" }) {
         title
         _id
         menu {
@@ -103,13 +102,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
       <>{children}</>
-      <MainFooter
-        {...mapMainFooterToProps(
-          data.sanityCompanyInfo,
-          data.sanityCompanyLogo,
-          data.allSanitySocialInfo,
-        )}
-      />
+      <div>Footer</div>
     </>
   );
 };
