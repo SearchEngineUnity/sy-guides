@@ -3,20 +3,46 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+const Hyperlink = styled.a`
+  &:link {
+    font-weight: bold;
+    color: #2664b0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fcce09;
+  }
+`;
+
+const GatsbyLink = styled(Link)`
+  &:link {
+    font-weight: bold;
+    color: #2664b0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fcce09;
+  }
+`;
+
 const serializers = {
   marks: {
     internalLink: ({ mark, children }) => {
       const { slug = {} } = mark.reference;
       const href = slug.current === '/' ? `/` : `/${slug.current}`;
 
-      return <Link to={href}>{children}</Link>;
+      return <GatsbyLink to={href}>{children}</GatsbyLink>;
     },
     externalLink: ({ mark, children }) => {
       const { href } = mark;
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
+        <Hyperlink href={href} target="_blank" rel="noopener noreferrer">
           {children}
-        </a>
+        </Hyperlink>
       );
     },
     inlineImage: ({ mark, children }) => {

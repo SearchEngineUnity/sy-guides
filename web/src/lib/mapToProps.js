@@ -166,12 +166,13 @@ export function mapGuideHeroToProps({ h1, author, displayDate, heroImage }) {
     image: heroImage?.mainImage?.image?.asset?.url,
   };
 }
-export function mapCtaFormToProps({ idTag, title, subtitle, form }) {
+export function mapCtaFormToProps({ idTag, title, subtitle, form, _rawDisclaimer }) {
   return {
     id: idTag,
     title,
     subtitle,
     form,
+    disclaimer: _rawDisclaimer,
   };
 }
 

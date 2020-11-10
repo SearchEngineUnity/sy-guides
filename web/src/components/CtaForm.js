@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { navigate } from '@reach/router';
+import BlockContent from './block-contents/simpleSerializer';
 
 const StyledLabel = styled(Form.Label)``;
 
@@ -30,7 +32,7 @@ const StyledButton = styled(Button)`
   }
 `;
 
-function CtaForm({ id, title, subtitle, form }) {
+function CtaForm({ id, title, subtitle, form, disclaimer }) {
   const [validated, setValidated] = useState(false);
   let isValid = true;
   const [success, setSuccess] = useState(false);
@@ -59,6 +61,7 @@ function CtaForm({ id, title, subtitle, form }) {
           setSuccess(true);
           myForm.reset();
           setValidated(false);
+          navigate(`/thank-you`);
         })
         .catch((error) => alert(error));
     }
@@ -156,7 +159,7 @@ function CtaForm({ id, title, subtitle, form }) {
                 </Form.Group>
               );
             })}
-            {success && <p>Thank you! You will hear from us soon.</p>}
+            <BlockContent blocks={disclaimer} />
             <StyledButton type="submit">{form.submit}</StyledButton>
           </Form>
         </Col>

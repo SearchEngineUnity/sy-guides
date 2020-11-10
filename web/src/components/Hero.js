@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import BlockContent from './block-contents/HeroSerializer';
+import BlockContent from './block-contents/simpleSerializer';
 // import styled from 'styled-components';
 // const StyledDiv = styled.div`
 //   text-align: center;

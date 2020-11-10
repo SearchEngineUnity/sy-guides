@@ -11,7 +11,7 @@ import styled from 'styled-components';
 
 const Footer = styled.footer`
   background-color: #5a5a5a;
-  padding: 24px 0px;
+  padding-top: 24px;
 `;
 
 const Hyperlink = styled.a`
@@ -23,22 +23,20 @@ const Hyperlink = styled.a`
 
   &:hover,
   &:focus,
-  &:active,
-  &.active {
+  &:active {
     color: #fcce09;
-    transform: translateY(-5px);
   }
 `;
 
 function AltFooter({ name, logo, brandName, social }) {
   return (
     <Footer>
-      <Container
-        className="px-0"
-        style={{ fontSize: '14px', color: 'white', fontWeight: 'normal' }}
-      >
+      <Container style={{ fontSize: '14px', color: 'white', fontWeight: 'normal' }}>
         <Row>
-          <Col className="col-auto mr-auto" style={{ display: 'flex', flexDirection: 'column' }}>
+          <Col
+            className="col-auto mr-auto"
+            style={{ display: 'flex', flexDirection: 'column', paddingBottom: '24px' }}
+          >
             <div style={{ flex: '1 0 auto' }} />
             <div>
               {social.map(({ node }) => {
@@ -89,7 +87,7 @@ function AltFooter({ name, logo, brandName, social }) {
               })}
             </div>
           </Col>
-          <Col className="col-auto" style={{ fontSize: '12px' }}>
+          <Col className="col-auto" style={{ fontSize: '12px', paddingBottom: '24px' }}>
             <img
               src={logo}
               alt={brandName}

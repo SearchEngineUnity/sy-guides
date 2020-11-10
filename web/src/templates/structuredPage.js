@@ -48,6 +48,7 @@ export const query = graphql`
           idTag
           subtitle
           title
+          _rawDisclaimer(resolveReferences: { maxDepth: 10 })
           form {
             _key
             formFields {
