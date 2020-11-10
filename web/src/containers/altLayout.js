@@ -11,7 +11,8 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
-import { mapMainNavToProps } from '../lib/mapToProps';
+import AltFooter from '../components/AltFooter';
+import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -102,7 +103,13 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
       <>{children}</>
-      <div>Footer</div>
+      <AltFooter
+        {...mapMainFooterToProps(
+          data.sanityCompanyInfo,
+          data.sanityCompanyLogo,
+          data.allSanitySocialInfo,
+        )}
+      />
     </>
   );
 };
