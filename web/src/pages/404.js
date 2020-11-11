@@ -8,7 +8,8 @@ import SEO from '../components/Seo';
 import Cloud from '../images/SY-404-page-image.svg';
 
 const Hyperlink = styled.a`
-  &:link {
+  &:link,
+  &:visited {
     font-weight: bold;
     color: #2664b0;
   }
@@ -21,7 +22,8 @@ const Hyperlink = styled.a`
 `;
 
 const GatsbyLink = styled(Link)`
-  &:link {
+  &:link,
+  &:visited {
     font-weight: bold;
     color: #2664b0;
   }
