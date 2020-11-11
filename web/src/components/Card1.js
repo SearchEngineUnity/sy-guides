@@ -11,12 +11,12 @@ function Card1({ idTag, pdfURL, appName, appIcon, osName, osIcon, osDevice }) {
       <Card.Body>
         <Row className="justify-content-center">
           <Col>
-          <img src={appIcon} alt={appName} loading="lazy"></img>
-        <Card.Title>{appName}</Card.Title>
+            <img src={appIcon} alt={appName} loading="lazy" />
+            <Card.Title>{appName}</Card.Title>
           </Col>
           <Col>
-          <img src={osIcon} alt={osName} loading="lazy"/>
-          <Card.Title>{osName}</Card.Title>
+            <img src={osIcon} alt={osName} loading="lazy" />
+            <Card.Title>{osName}</Card.Title>
           </Col>
         </Row>
         <Button variant="primary">Download Guide</Button>

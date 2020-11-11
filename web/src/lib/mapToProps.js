@@ -118,7 +118,7 @@ export function mapCardToProps({ title, _key, pdf, platform, software }) {
   return {
     title,
     idTag: _key,
-    pdfURL: pdf.asset.url,
+    pdfURL: pdf?.asset?.url,
     appName: software.name,
     appIcon: software.logo.asset.url,
     osName: platform.name,

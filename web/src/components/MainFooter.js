@@ -15,7 +15,8 @@ const Footer = styled.footer`
 `;
 
 const Hyperlink = styled.a`
-  &:link {
+  &:link,
+  &:visited {
     color: white;
     font-size: 14px;
     font-weight: normal;
@@ -38,7 +39,7 @@ function MainFooter({ name, logo, brandName, social }) {
             style={{ display: 'flex', flexDirection: 'column', paddingBottom: '24px' }}
           >
             <p>
-              <Hyperlink href="/privacy-policy" target="_blank" rel="noreferrer">
+              <Hyperlink href="/privacy-policy" target="_blank" rel="noopener noreferrer">
                 Privacy Policy
               </Hyperlink>
             </p>
@@ -51,7 +52,12 @@ function MainFooter({ name, logo, brandName, social }) {
                 switch (node.social) {
                   case 'facebook':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaFacebookSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -59,7 +65,12 @@ function MainFooter({ name, logo, brandName, social }) {
                     );
                   case 'twitter':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaTwitterSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -67,7 +78,12 @@ function MainFooter({ name, logo, brandName, social }) {
                     );
                   case 'linkedin':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaLinkedin
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -75,7 +91,12 @@ function MainFooter({ name, logo, brandName, social }) {
                     );
                   case 'instagram':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaInstagramSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -83,7 +104,12 @@ function MainFooter({ name, logo, brandName, social }) {
                     );
                   case 'youtube':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaYoutubeSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -106,7 +132,12 @@ function MainFooter({ name, logo, brandName, social }) {
             />
             <p style={{ marginBottom: '5px' }}>
               ©{' '}
-              <Hyperlink href="https://techboombers.com" style={{ fontSize: '12px' }}>
+              <Hyperlink
+                href="https://techboomers.com/"
+                style={{ fontSize: '12px' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {name}
               </Hyperlink>{' '}
               {new Date().getFullYear()}

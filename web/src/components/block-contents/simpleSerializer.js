@@ -28,7 +28,7 @@ const serializers = {
     externalLink: ({ mark, children }) => {
       const { href } = mark;
       return (
-        <Hyperlink href={href} target="_blank" rel="noopener noreferrer">
+        <Hyperlink href={href} target="_blank" rel="noopener noopener noreferrer">
           {children}
         </Hyperlink>
       );

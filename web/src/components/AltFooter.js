@@ -43,7 +43,12 @@ function AltFooter({ name, logo, brandName, social }) {
                 switch (node.social) {
                   case 'facebook':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaFacebookSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -51,7 +56,12 @@ function AltFooter({ name, logo, brandName, social }) {
                     );
                   case 'twitter':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaTwitterSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -59,7 +69,12 @@ function AltFooter({ name, logo, brandName, social }) {
                     );
                   case 'linkedin':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaLinkedin
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -67,7 +82,12 @@ function AltFooter({ name, logo, brandName, social }) {
                     );
                   case 'instagram':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaInstagramSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />
@@ -75,7 +95,12 @@ function AltFooter({ name, logo, brandName, social }) {
                     );
                   case 'youtube':
                     return (
-                      <Hyperlink href={node.link} target="_blank" rel="noreferrer" key={node._id}>
+                      <Hyperlink
+                        href={node.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={node._id}
+                      >
                         <FaYoutubeSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
                         />

@@ -16,19 +16,20 @@ export default {
       name: 'pdf',
       title: 'PDF document',
       type: 'file',
-      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'software',
       title: 'Software',
       type: 'reference',
       to: [{ type: 'app' }],
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'platform',
       title: 'Platform',
       type: 'reference',
       to: [{ type: 'os' }],
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
   ],
   preview: {
