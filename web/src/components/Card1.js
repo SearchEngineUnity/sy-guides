@@ -64,7 +64,6 @@ const Subtitle = styled(Card.Title)`
   font-size: 14px;
   padding-top: 12px;
   padding-bottom: 20px;
-  font-weight: bold;
 `;
 
 function Card1({ idTag, pdfURL, appName, appIcon, osName, osIcon, osDevice }) {
@@ -103,7 +102,9 @@ function Card1({ idTag, pdfURL, appName, appIcon, osName, osIcon, osDevice }) {
             <Subtitle className="text-center">{osName}</Subtitle>
           </Col>
         </Row>
-        <StyledButton href={pdfURL} target="_blank" rel="noopener noreferrer">Download Guide</StyledButton>
+        <StyledButton href={pdfURL} target="_blank" rel="noopener noreferrer">
+          Download Guide
+        </StyledButton>
       </StyledCardBody>
     </StyledCard>
   );
