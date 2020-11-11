@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import AddThisOptions from '@awolf81/gatsby-theme-addthis/components/AddThisOptions';
 import Layout from '../containers/layout';
 import SEO from '../components/Seo';
 import Grid from '../components/Grid';
@@ -151,6 +152,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO {...mapSeoToProps(data.page, data.site.siteMetadata.siteUrl, type)} />
+      <AddThisOptions />
       <main>
         {data.page.segments.map((segment) => {
           const { _type } = segment;
