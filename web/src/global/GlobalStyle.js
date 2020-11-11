@@ -6,85 +6,28 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: rubrik-edge-new,sans-serif;
+    font-family: Source Sans Pro;
     margin: 0 auto;
     font-weight: 400;
     font-style: normal;
     color: #2c2142;
   }
 
-  h1, h2 {
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  h2 {
-    margin-bottom: 1rem;
-  }
-
-  a {
-    color: #2C2142;
-    font-weight: 700;
-  }
-  
-  a:hover {
-    color: #2C2142;
-    font-weight: 700;
-  }
-  
-  a:active {
-    color: #2C2142;
+  h1 {
+    font-family: Montserrat;
     font-weight: 700;
   }
 
-  a.active {
-    color: #2C2142;
-    font-weight: 700;
-  }
-  
-  a:visited {
-    color: #2C2142;
-    font-weight: 700;
+  h2, h3, h4, h5, h6 {
+    font-family: Montserrat;
   }
 
   section {
     margin-bottom: 3rem;
   }
 
-  section:nth-child(n+2) {
-    padding-top: 6.5rem;
-    margin-top: -6.5rem;
-
-    @media screen and (max-width: 991px) {
-      padding-top: 18rem;
-      margin-top: -18rem;
-    }
-  }
-
-  hr {
-    border-bottom: 1px solid #F2F2F2;
-    background-color: #F2F2F2;
-    margin: 0;
-  }
-
   input, textara {
     border-color: #BBBDBF;
-  }
-
-  button:focus, a:focus {
-    outline-color: #086068;
-  }
-
-  .borderdesign {
-    border:2px solid #f2f2f2f2;
-  }
-
-  .leader {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
   }
 
   .form-control:focus, .form-control:active, .form-control:hover {

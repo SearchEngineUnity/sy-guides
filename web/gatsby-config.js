@@ -124,5 +124,20 @@ module.exports = {
         environments: ['production', 'development'],
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Source Sans Pro`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
   ],
 };

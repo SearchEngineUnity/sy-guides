@@ -62,7 +62,7 @@ const ThankYouPage = () => {
             </p>
             <p>
               We offer more than 100 website and app courses absolutely free on our{' '}
-              <Hyperlink href="https://techboomers.com" target="_blank" rel="noreferrer">
+              <Hyperlink href="https://techboomers.com" target="_blank" rel="noopener noreferrer">
                 Techboomers site
               </Hyperlink>
               . It’s a free educational site that teaches you how to do just about everything online
@@ -73,7 +73,7 @@ const ThankYouPage = () => {
               <Hyperlink
                 href="https://www.youtube.com/channel/UCdtwPYK_0LG3ll1Op0iAMkQ"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Techboomers YouTube
               </Hyperlink>{' '}
