@@ -15,7 +15,8 @@ const Footer = styled.footer`
 `;
 
 const Hyperlink = styled.a`
-  &:link {
+  &:link,
+  &:visited {
     color: white;
     font-size: 14px;
     font-weight: normal;
