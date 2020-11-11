@@ -30,7 +30,7 @@ const StyledButton = styled(Button)`
 
 const StyledCard = styled(Card)`
   box-shadow: 0px 3px 6px #00000029;
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px;
   }
 `;
 
