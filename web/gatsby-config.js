@@ -139,5 +139,11 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `@awolf81/gatsby-theme-addthis`,
+      options: {
+        publicId: process.env.ADDTHIS_PUBLIC_ID,
+      },
+    },
   ],
 };
