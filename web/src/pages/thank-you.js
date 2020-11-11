@@ -46,7 +46,7 @@ const ThankYouPage = () => {
       <Container>
         <Row>
           <Col xl="6" lg="8" md="10" sm="12" className="mx-auto">
-            <h1 style={{ color: '#2664B0' }}>Thank You For Getting in Touch with Us!</h1>
+            <h1>Thank You For Getting in Touch with Us!</h1>
             <p>
               Thank you for taking time to discover Sunny Guides and sending us a message! We’ll be
               in touch soon.

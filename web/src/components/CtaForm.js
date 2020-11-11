@@ -8,6 +8,7 @@ import BlockContent from './block-contents/simpleSerializer';
 const StyledLabel = styled(Form.Label)``;
 
 const StyledButton = styled(Button)`
+  font-family: Montserrat;
   font-size: 14px;
   font-weight: bold;
   padding: 7.5px 30px;
@@ -84,12 +85,10 @@ function CtaForm({ id, title, subtitle, form, disclaimer }) {
   };
 
   return (
-    <Container id={id} as="section">
+    <Container id={id} as="section" className="page-section">
       <Row>
         <Col xs={12} sm={10} className="mx-auto">
-          <h2 className="text-center" style={{ color: '#2664B0', fontWeight: 'normal' }}>
-            {title}
-          </h2>
+          <h2 className="text-center">{title}</h2>
           {subtitle && <p className="text-center">{subtitle}</p>}
         </Col>
       </Row>
