@@ -11,13 +11,12 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
-import MainFooter from '../components/MainFooter';
-import CookieConsent from '../components/CookieConsent';
-import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
+import AltFooter from '../components/AltFooter';
+import { mapMainNavToProps } from '../lib/mapToProps';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query LayoutQuery {
+    query PpLayoutQuery {
       sanityCompanyInfo {
         _key
         address1
@@ -27,7 +26,7 @@ const Layout = ({ children }) => {
         province
         name
       }
-      sanityNavMenu(title: { eq: "Main Navigation" }) {
+      sanityNavMenu(title: { eq: "Alt Navigation" }) {
         title
         _id
         menu {
@@ -78,19 +77,11 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <div style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
       <GlobalStyle />
       <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
-      <>{children}</>
-      <MainFooter
-        {...mapMainFooterToProps(
-          data.sanityCompanyInfo,
-          data.sanityCompanyLogo,
-          data.allSanitySocialInfo,
-        )}
-      />
-      <CookieConsent />
-    </>
+      <div style={{ flex: '1' }}>{children}</div>
+    </div>
   );
 };
 
