@@ -20,6 +20,7 @@ const CustomNav = styled(Nav)`
 `;
 
 const StyledButton = styled(Button)`
+  font-family: Montserrat;
   font-size: 14px;
   font-weight: bold;
   padding: 7.5px 30px;

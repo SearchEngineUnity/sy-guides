@@ -9,8 +9,8 @@ function Hero({ id, title, media, subtitle }) {
   console.log(media);
   console.log(subtitle);
   return (
-    <Container as="section" id={id}>
-      <h1 style={{ color: '#2664B0' }}>{title}</h1>
+    <Container as="section" id={id} className="page-section">
+      <h1>{title}</h1>
       {media._type === 'illustration' && (
         <Row>
           <Col xs={12} md={8} lg={7} className="mx-auto">

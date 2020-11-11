@@ -10,20 +10,26 @@ export default createGlobalStyle`
     margin: 0 auto;
     font-weight: 400;
     font-style: normal;
-    color: #2c2142;
+    color: #5A5A5A;
   }
 
   h1 {
     font-family: Montserrat;
     font-weight: 700;
+    color: #2664B0;
   }
 
   h2, h3, h4, h5, h6 {
     font-family: Montserrat;
+    color: #2664B0;
   }
 
-  section {
+  .page-section {
     margin-bottom: 3rem;
+  }
+
+  .guide-section {
+    margin-bottom: calc(3rem - 30px);
   }
 
   input, textara {

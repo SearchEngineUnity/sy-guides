@@ -3,6 +3,7 @@ import { Card, Button, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const StyledButton = styled(Button)`
+  font-family: Montserrat;
   font-size: 14px;
   font-weight: bold;
   color: #5a5a5a !important;
@@ -35,11 +36,14 @@ const StyledCard = styled(Card)`
 
 const StyledCardHeader = styled(Card.Header)`
   background-color: white;
+  flex: 1 1 auto;
+  font-family: Montserrat;
   }
 `;
 
 const StyledCardBody = styled(Card.Body)`
   background-color: #2664B0;
+  flex: none;
   }
 `;
 
@@ -58,12 +62,14 @@ const OsName = styled.span`
 const Subtitle = styled(Card.Title)`
   color: #fff;
   font-size: 14px;
-  padding-top: 18px;
+  padding-top: 12px;
+  padding-bottom: 20px;
+  font-weight: bold;
 `;
 
 function Card1({ idTag, pdfURL, appName, appIcon, osName, osIcon, osDevice }) {
   return (
-    <StyledCard className="border-0" id={idTag}>
+    <StyledCard className="border-0 h-100" id={idTag}>
       <StyledCardHeader>
         <AppName>{appName} for</AppName> <br />
         <OsName>
@@ -73,12 +79,28 @@ function Card1({ idTag, pdfURL, appName, appIcon, osName, osIcon, osDevice }) {
       <StyledCardBody>
         <Row>
           <Col className="col-auto">
-            <img src={appIcon} alt={appName} height="40px" width="40px" loading="lazy" />
-            <Subtitle>{appName}</Subtitle>
+            <img
+              src={appIcon}
+              alt={appName}
+              height="40px"
+              width="40px"
+              loading="lazy"
+              className="mx-auto"
+              style={{ display: 'block' }}
+            />
+            <Subtitle className="text-center">{appName}</Subtitle>
           </Col>
           <Col className="col-auto">
-            <img src={osIcon} alt={osName} height="40px" width="40px" loading="lazy" />
-            <Subtitle>{osName}</Subtitle>
+            <img
+              src={osIcon}
+              alt={osName}
+              height="40px"
+              width="40px"
+              loading="lazy"
+              className="mx-auto"
+              style={{ display: 'block' }}
+            />
+            <Subtitle className="text-center">{osName}</Subtitle>
           </Col>
         </Row>
         <StyledButton href={pdfURL}>Download Guide</StyledButton>

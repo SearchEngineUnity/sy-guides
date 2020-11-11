@@ -10,13 +10,13 @@ const Title = styled.h2`
 
 function Grid({ id, title, subtitle, col, cards }) {
   return (
-    <Container as="section" id={id}>
+    <Container as="section" id={id} className="guide-section">
       <Title>{title}</Title>
       <p>{subtitle}</p>
       <Row>
         {cards.map((card) => {
           return (
-            <div className={col} key={card._key}>
+            <div className={col} key={card._key} style={{ marginBottom: '30px' }}>
               <Card {...mapCardToProps(card)} />
             </div>
           );
