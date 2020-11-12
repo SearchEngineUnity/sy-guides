@@ -6,8 +6,6 @@ import BlockContent from './block-contents/simpleSerializer';
 //   text-align: center;
 // `;
 function Hero({ id, title, media, subtitle }) {
-  console.log(media);
-  console.log(subtitle);
   return (
     <Container as="section" id={id} className="page-section">
       <h1>{title}</h1>
