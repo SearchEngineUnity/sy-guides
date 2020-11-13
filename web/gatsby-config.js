@@ -96,6 +96,28 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: '', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-analytics', // default
+          anonymize: true, // default
+          allowAdFeatures: false, // default
+        },
+        googleTagManager: {
+          trackingId: 'GTM-M7SVVV4', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-google-tagmanager', // default
+          dataLayerName: 'dataLayer', // default
+        },
+        facebookPixel: {
+          pixelId: '', // leave empty if you want to disable the tracker
+          cookieName: 'gatsby-gdpr-facebook-pixel', // default
+        },
+        // Defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: process.env.GTM_ID,
@@ -107,21 +129,6 @@ module.exports = {
       options: {
         // Add any options here
         pure: true,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
-          // Setting this parameter is optional
-          anonymize: true,
-        },
-        facebookPixel: {
-          pixelId: 'YOUR_FACEBOOK_PIXEL_ID',
-        },
-        // Defines the environments where the tracking should be available  - default is ["production"]
-        environments: ['production', 'development'],
       },
     },
     {
