@@ -29,12 +29,11 @@ export default {
   ],
   preview: {
     select: {
-      slug: 'redirectTo.slug.current',
-      type: 'redirectTo._type',
+      redirectTo: 'redirectTo',
     },
-    prepare({ slug, type }) {
+    prepare({ redirectTo }) {
       return {
-        title: `/${slug}`,
+        title: `To ${redirectTo}`,
       };
     },
   },
