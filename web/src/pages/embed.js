@@ -17,7 +17,7 @@ const Embed = () => {
           width="100%"
           height="1000"
         />
-        <a href="https://drive.google.com/file/d/17FJaChlS8keNaXmrSWH5YjfBsbQMNFmp/preview">preview link</a>
+        <a href="https://drive.google.com/file/d/1UnfB66suDyf0W7kbhvsCrv8w5zsI0cJj/view?usp=sharing">preview link</a>
       </Container>
     </Layout>
   );
