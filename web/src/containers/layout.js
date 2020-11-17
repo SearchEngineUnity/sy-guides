@@ -12,7 +12,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
 import MainFooter from '../components/MainFooter';
-import CookieConsent from '../components/CookieConsent';
 import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
 
 const Layout = ({ children }) => {
@@ -79,6 +78,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <GlobalStyle />
       <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
       <>{children}</>
@@ -89,7 +95,6 @@ const Layout = ({ children }) => {
           data.allSanitySocialInfo,
         )}
       />
-      <CookieConsent />
     </>
   );
 };

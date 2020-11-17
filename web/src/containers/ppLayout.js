@@ -11,7 +11,6 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
-import AltFooter from '../components/AltFooter';
 import { mapMainNavToProps } from '../lib/mapToProps';
 
 const Layout = ({ children }) => {
@@ -78,6 +77,13 @@ const Layout = ({ children }) => {
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <GlobalStyle />
       <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
       <div style={{ flex: '1' }}>{children}</div>
