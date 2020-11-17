@@ -109,5 +109,11 @@ module.exports = {
         pure: true,
       },
     },
+    {
+      resolve: `@awolf81/gatsby-theme-addthis`,
+      options: {
+        publicId: process.env.ADDTHIS_PUBID,
+      },
+    },
   ],
 };
