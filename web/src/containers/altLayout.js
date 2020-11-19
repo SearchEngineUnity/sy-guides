@@ -9,10 +9,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
 import AltFooter from '../components/AltFooter';
 import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
+
+const FooterWrapper = styled.div`
+  @media (max-width: 576px) {
+    margin-bottom: 48px;
+  }
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -88,13 +95,15 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
       <div style={{ flex: '1' }}>{children}</div>
-      <AltFooter
-        {...mapMainFooterToProps(
-          data.sanityCompanyInfo,
-          data.sanityCompanyLogo,
-          data.allSanitySocialInfo,
-        )}
-      />
+      <FooterWrapper>
+        <AltFooter
+          {...mapMainFooterToProps(
+            data.sanityCompanyInfo,
+            data.sanityCompanyLogo,
+            data.allSanitySocialInfo,
+          )}
+        />
+      </FooterWrapper>
     </div>
   );
 };
