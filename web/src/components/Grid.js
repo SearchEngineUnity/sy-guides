@@ -16,7 +16,7 @@ function Grid({ id, title, subtitle, col, cards }) {
       <Row>
         {cards.map((card) => {
           return (
-            <div className={col} key={card._key} style={{ marginBottom: '30px' }}>
+            <div className={col} key={card._id} style={{ marginBottom: '30px' }}>
               <Card {...mapCardToProps(card)} />
             </div>
           );
