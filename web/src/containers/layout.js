@@ -15,9 +15,9 @@ import MainNav from '../components/MainNav';
 import MainFooter from '../components/MainFooter';
 import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
 
-const FooterWrapper = styled.div`
+const NavWrapper = styled.div`
   @media (max-width: 576px) {
-    margin-bottom: 48px;
+    margin-top: 48px;
   }
 `;
 
@@ -93,17 +93,18 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <GlobalStyle />
-      <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      <NavWrapper>
+        <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      </NavWrapper>
       <>{children}</>
-      <FooterWrapper>
-        <MainFooter
-          {...mapMainFooterToProps(
-            data.sanityCompanyInfo,
-            data.sanityCompanyLogo,
-            data.allSanitySocialInfo,
-          )}
-        />
-      </FooterWrapper>
+
+      <MainFooter
+        {...mapMainFooterToProps(
+          data.sanityCompanyInfo,
+          data.sanityCompanyLogo,
+          data.allSanitySocialInfo,
+        )}
+      />
     </>
   );
 };

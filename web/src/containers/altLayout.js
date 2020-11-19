@@ -15,9 +15,9 @@ import MainNav from '../components/MainNav';
 import AltFooter from '../components/AltFooter';
 import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
 
-const FooterWrapper = styled.div`
+const NavWrapper = styled.div`
   @media (max-width: 576px) {
-    margin-bottom: 48px;
+    margin-top: 48px;
   }
 `;
 
@@ -93,17 +93,18 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <GlobalStyle />
-      <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      <NavWrapper>
+        <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      </NavWrapper>
       <div style={{ flex: '1' }}>{children}</div>
-      <FooterWrapper>
-        <AltFooter
-          {...mapMainFooterToProps(
-            data.sanityCompanyInfo,
-            data.sanityCompanyLogo,
-            data.allSanitySocialInfo,
-          )}
-        />
-      </FooterWrapper>
+
+      <AltFooter
+        {...mapMainFooterToProps(
+          data.sanityCompanyInfo,
+          data.sanityCompanyLogo,
+          data.allSanitySocialInfo,
+        )}
+      />
     </div>
   );
 };

@@ -14,9 +14,9 @@ import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
 import { mapMainNavToProps } from '../lib/mapToProps';
 
-const ChildWrapper = styled.div`
+const NavWrapper = styled.div`
   @media (max-width: 576px) {
-    margin-bottom: 48px;
+    margin-top: 48px;
   }
 `;
 
@@ -92,10 +92,11 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <GlobalStyle />
-      <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
-      <ChildWrapper>
-        <div style={{ flex: '1' }}>{children}</div>
-      </ChildWrapper>
+      <NavWrapper>
+        <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      </NavWrapper>
+
+      <div style={{ flex: '1' }}>{children}</div>
     </div>
   );
 };

@@ -124,13 +124,13 @@ function AltFooter({ name, logo, brandName, social }) {
             />
             <p style={{ marginBottom: '5px' }}>
               ©{' '}
-              <Hyperlink href="https://techboombers.com" style={{ fontSize: '12px' }}>
+              <Hyperlink href="https://techboomers.com/" style={{ fontSize: '12px' }}>
                 {name}
               </Hyperlink>{' '}
               {new Date().getFullYear()}
             </p>
+            <p style={{ marginBottom: '0' }}>Creative Commons - Share with attribution</p>
             <p style={{ marginBottom: '5px' }}>All rights reserved</p>
-            <p style={{ marginBottom: '0' }}>Creative Commons - Share with attribution.</p>
           </Col>
         </Row>
       </Container>

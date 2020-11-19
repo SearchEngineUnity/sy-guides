@@ -103,7 +103,7 @@ function Card1({ idTag, pdfURL, appName, appIcon, osName, osIcon, osDevice }) {
           </Col>
         </Row>
         <StyledButton href={pdfURL} target="_blank" rel="noopener noreferrer">
-          Download Guide
+          Open Guide
         </StyledButton>
       </StyledCardBody>
     </StyledCard>

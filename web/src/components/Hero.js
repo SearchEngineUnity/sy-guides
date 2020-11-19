@@ -16,7 +16,7 @@ function Hero({ id, title, media, subtitle }) {
               src={media.asset.url}
               alt={media.alt}
               loading="lazy"
-              style={{ marginBottom: '0.5rem' }}
+              style={{ marginBottom: '0.5rem', width: '100%', height: 'auto' }}
             />
           </Col>
         </Row>
