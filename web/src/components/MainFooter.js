@@ -47,9 +47,9 @@ function MainFooter({ name, logo, brandName, social }) {
                 Privacy Policy
               </Hyperlink>
             </p>
-            <p>
+            {/* <p>
               <Hyperlink href="#contact-us">Contact</Hyperlink>
-            </p>
+            </p> */}
             <div style={{ flex: '1 0 auto' }} />
             <div>
               {social.map(({ node }) => {

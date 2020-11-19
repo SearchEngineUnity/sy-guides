@@ -1,7 +1,7 @@
 {
-  "name": "seu",
+  "name": "sunny-guides",
   "version": "1.0.0",
-  "description": "This is the repository for SEU landing page",
+  "description": "This is the repository for the SY website",
   "scripts": {
     "clean": "lerna run clean",
     "deploy": "lerna run deploy",
@@ -25,7 +25,7 @@
     "url": "git+https://github.com/SearchEngineUnity/seu.git"
   },
   "keywords": [
-    "SEU",
+    "SY Website",
     "landing",
     "gatsby",
     "sanity.io"
