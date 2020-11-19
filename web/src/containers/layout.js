@@ -96,7 +96,15 @@ const Layout = ({ children }) => {
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
           rel="stylesheet"
+          media="print"
+          onLoad="this.onload=null;this.removeAttribute('media');"
         />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
+          />
+        </noscript>
       </Helmet>
       <GlobalStyle />
       <NavWrapper>
