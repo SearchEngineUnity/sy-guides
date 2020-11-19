@@ -87,6 +87,12 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
+          as="style"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
           rel="stylesheet"

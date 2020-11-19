@@ -11,9 +11,15 @@ function Privacy() {
         <h1>Privacy Policy</h1>
         <p>
           This Privacy Policy governs the manner in which Sunny Guides, a subsidiary website of{' '}
-          <a href="https://techboomers.com/">Techboomers Media Inc.</a>, collects, uses, maintains,
-          and discloses information collected from users (each, a &quot;User&quot;) of the{' '}
-          <a href="https://sunnyguides.ca">https://sunnyguides.ca</a> website (“Site”).
+          <a href="https://techboomers.com/" target="_blank" rel="noopener noreferrer">
+            Techboomers Media Inc.
+          </a>
+          , collects, uses, maintains, and discloses information collected from users (each, a
+          &quot;User&quot;) of the{' '}
+          <a href="https://sunnyguides.ca" target="_blank" rel="noopener noreferrer">
+            https://sunnyguides.ca
+          </a>{' '}
+          website (“Site”).
         </p>
         <h2>Our outlook on privacy</h2>
         <p>
@@ -72,11 +78,14 @@ function Privacy() {
           We may collect personal identification information from Users in a variety of ways,
           including, but not limited to, when Users visit our site, register on the site, fill out a
           form, respond to a survey, and in connection with other activities, services, features or
-          resources we make available on our Site. Users may be asked for, as appropriate, name,
-          and/or email address. Users may, however, visit our Site anonymously. We will collect
-          personal identification information from Users only if they voluntarily submit such
-          information to us. Users can always refuse to supply personal identification information,
-          except that it may prevent them from engaging in certain Site-related activities.
+          resources we make available on our Site.
+        </p>
+        <p>
+          Users may be asked for, as appropriate, name, and/or email address. Users may, however,
+          visit our Site anonymously. We will collect personal identification information from Users
+          only if they voluntarily submit such information to us. Users can always refuse to supply
+          personal identification information, except that it may prevent them from engaging in
+          certain Site-related activities.
         </p>
         <h2>Non-personal identification information</h2>
         <p>
@@ -92,8 +101,11 @@ function Privacy() {
           places cookies on their hard drive for record-keeping purposes, and sometimes to track
           information about them. A User may choose to set their web browser to refuse cookies, or
           to alert you when cookies are being sent. If they do so, note that some parts of the Site
-          may not function properly. If you want to learn more about how to enable or disable
-          cookies, please reference our helpful tutorial{' '}
+          may not function properly.
+        </p>
+        <p>
+          If you want to learn more about how to enable or disable cookies, please reference our
+          helpful tutorial{' '}
           <a
             href="https://techboomers.com/t/enable-cookies"
             target="_blank"
@@ -220,8 +232,10 @@ function Privacy() {
           <a href="https://sunnyguides.ca/#contact-us" target="_blank" rel="noopener noreferrer">
             contact us
           </a>
-          . This document was last updated on November 11, 2020
+          .
         </p>
+        <p>This document was last updated on November 19, 2020.</p>
+        <br />
         <br />
       </Container>
     </Layout>

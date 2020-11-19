@@ -40,7 +40,7 @@ function MainFooter({ name, logo, brandName, social }) {
           >
             <p>
               <Hyperlink
-                href="https://sy-guides.netlify.app/privacy-policy"
+                href="https://sunnyguides.ca/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
               >

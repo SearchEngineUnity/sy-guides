@@ -1,10 +1,11 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
+import styled from 'styled-components';
 import BlockContent from './block-contents/simpleSerializer';
-// import styled from 'styled-components';
 // const StyledDiv = styled.div`
 //   text-align: center;
 // `;
+
 function Hero({ id, title, media, subtitle }) {
   return (
     <Container as="section" id={id} className="page-section">
@@ -15,8 +16,13 @@ function Hero({ id, title, media, subtitle }) {
             <img
               src={media.asset.url}
               alt={media.alt}
-              loading="lazy"
-              style={{ marginBottom: '0.5rem', width: '100%', height: 'auto' }}
+              loading="eager"
+              width="100%"
+              height="auto"
+              style={{
+                marginBottom: '0.5rem',
+                aspectRatio: 'calc( attr(width) / attr(height) * 100%)',
+              }}
             />
           </Col>
         </Row>
