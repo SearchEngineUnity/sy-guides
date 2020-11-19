@@ -39,7 +39,11 @@ function MainFooter({ name, logo, brandName, social }) {
             style={{ display: 'flex', flexDirection: 'column', paddingBottom: '24px' }}
           >
             <p>
-              <Hyperlink href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+              <Hyperlink
+                href="https://sunnyguides.ca/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Privacy Policy
               </Hyperlink>
             </p>
@@ -57,6 +61,7 @@ function MainFooter({ name, logo, brandName, social }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         key={node._id}
+                        aria-label="Facebook"
                       >
                         <FaFacebookSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
@@ -70,6 +75,7 @@ function MainFooter({ name, logo, brandName, social }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         key={node._id}
+                        aria-label="Twitter"
                       >
                         <FaTwitterSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
@@ -83,6 +89,7 @@ function MainFooter({ name, logo, brandName, social }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         key={node._id}
+                        aria-label="LinkedIn"
                       >
                         <FaLinkedin
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
@@ -96,6 +103,7 @@ function MainFooter({ name, logo, brandName, social }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         key={node._id}
+                        aria-label="Instagram"
                       >
                         <FaInstagramSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
@@ -109,6 +117,7 @@ function MainFooter({ name, logo, brandName, social }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         key={node._id}
+                        aria-label="Youtube"
                       >
                         <FaYoutubeSquare
                           style={{ width: '20px', height: '20px', marginRight: '20px' }}
@@ -142,8 +151,8 @@ function MainFooter({ name, logo, brandName, social }) {
               </Hyperlink>{' '}
               {new Date().getFullYear()}
             </p>
+            <p style={{ marginBottom: '0' }}>Creative Commons - Share with attribution</p>
             <p style={{ marginBottom: '5px' }}>All rights reserved</p>
-            <p style={{ marginBottom: '0' }}>Creative Commons - Share with attribution.</p>
           </Col>
         </Row>
       </Container>

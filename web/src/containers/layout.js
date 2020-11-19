@@ -9,10 +9,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
 import MainFooter from '../components/MainFooter';
 import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
+
+const NavWrapper = styled.div`
+  @media (max-width: 576px) {
+    margin-top: 48px;
+  }
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -80,14 +87,23 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
+          as="style"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
       <GlobalStyle />
-      <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      <NavWrapper>
+        <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      </NavWrapper>
       <>{children}</>
+
       <MainFooter
         {...mapMainFooterToProps(
           data.sanityCompanyInfo,

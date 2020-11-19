@@ -4,14 +4,16 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Hyperlink = styled.a`
-  &:link {
+  &:link,
+  &:visited {
     font-weight: bold;
     color: #2664b0;
   }
 `;
 
 const GatsbyLink = styled(Link)`
-  &:link {
+  &:link,
+  &:visited {
     font-weight: bold;
     color: #2664b0;
   }

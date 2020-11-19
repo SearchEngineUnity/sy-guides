@@ -50,25 +50,6 @@ const CustomNavbar = styled(Navbar)`
   padding: 0 0;
 `;
 
-const CustomA = styled.a`
-  @media screen and (max-width: 991px) {
-    overflow: hidden;
-    margin-left: -140.5px;
-    padding-left: 140.5px;
-    margin-right: -140.5px;
-    padding-right: 140.5px;
-  }
-
-  @media screen and (max-width: 575px) {
-    background: white;
-    overflow: hidden;
-    margin-left: -81px;
-    padding-left: 81px;
-    margin-right: -81px;
-    padding-right: 81px;
-  }
-`;
-
 function NavTypeA({ menu }) {
   const [open, setOpen] = useState(false);
 

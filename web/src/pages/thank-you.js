@@ -39,7 +39,7 @@ const ThankYouPage = () => {
   useEffect(() => {
     setTimeout(() => {
       navigate('/');
-    }, 10000);
+    }, 60000);
   });
 
   return (
@@ -79,8 +79,8 @@ const ThankYouPage = () => {
               >
                 Techboomers YouTube
               </Hyperlink>{' '}
-              channel that offers even more helpful tutorials with step-by-step videos that more
-              350,000+ subscribers have come to love and rely on.
+              channel that offers even more helpful tutorials with step-by-step videos that 350,000+
+              subscribers have come to love and rely on.
             </p>
             <p>Have a sunny day!</p>
             <br />

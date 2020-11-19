@@ -79,7 +79,7 @@ export const query = graphql`
           _key
           _type
           cards {
-            _key
+            _id
             pdf {
               asset {
                 url

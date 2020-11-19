@@ -9,10 +9,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import GlobalStyle from '../global/GlobalStyle';
 import MainNav from '../components/MainNav';
 import AltFooter from '../components/AltFooter';
 import { mapMainNavToProps, mapMainFooterToProps } from '../lib/mapToProps';
+
+const NavWrapper = styled.div`
+  @media (max-width: 576px) {
+    margin-top: 48px;
+  }
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -86,8 +93,11 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <GlobalStyle />
-      <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      <NavWrapper>
+        <MainNav {...mapMainNavToProps(data.sanityNavMenu)} />
+      </NavWrapper>
       <div style={{ flex: '1' }}>{children}</div>
+
       <AltFooter
         {...mapMainFooterToProps(
           data.sanityCompanyInfo,
