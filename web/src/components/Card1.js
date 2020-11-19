@@ -30,7 +30,6 @@ const StyledButton = styled(Button)`
 
 const StyledCard = styled(Card)`
   box-shadow: 0px 3px 6px #00000029;
-  border-radius: 4px;
   }
 `;
 
@@ -44,6 +43,7 @@ const StyledCardHeader = styled(Card.Header)`
 const StyledCardBody = styled(Card.Body)`
   background-color: #2664B0;
   flex: none;
+  border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
   }
 `;
 
