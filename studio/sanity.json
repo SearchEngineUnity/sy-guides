@@ -15,6 +15,7 @@
     "@sanity/desk-tool",
     "@sanity/color-input",
     "table",
+    "graph-view",
     "media"
   ],
   "env": {
@@ -39,7 +40,7 @@
     },
     {
       "implements": "part:@sanity/form-builder/input/image/asset-sources",
-      "path": "./assetSources.js"
+      "path": "./parts/assetSources.js"
     }
   ]
 }
