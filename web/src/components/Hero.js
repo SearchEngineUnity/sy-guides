@@ -1,10 +1,19 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import styled from 'styled-components';
+import ReactPlayer from 'react-player';
 import BlockContent from './block-contents/simpleSerializer';
-// const StyledDiv = styled.div`
-//   text-align: center;
-// `;
+
+const PlayerWrapper = styled.div`
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+`;
+
+const StyledReactPlayer = styled(ReactPlayer)`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
 
 function Hero({ id, title, media, subtitle }) {
   return (
@@ -27,7 +36,11 @@ function Hero({ id, title, media, subtitle }) {
           </Col>
         </Row>
       )}
-      {media._type === 'video' && <div>this is a video</div>}
+      {media._type === 'video' && (
+        <PlayerWrapper>
+          <StyledReactPlayer url={media.url} controls width="100%" height="100%" />
+        </PlayerWrapper>
+      )}
       <BlockContent blocks={subtitle} />
     </Container>
   );
