@@ -20,9 +20,9 @@ function Hero({ id, title, media, subtitle }) {
   return (
     <Container as="section" id={id} className="page-section">
       <h1>{title}</h1>
-      {media._type === 'illustration' && (
-        <Row>
-          <Col xs={12} md={8} lg={7} className="mx-auto">
+      <Row>
+        <Col xs={12} md={8} lg={7} className="mx-auto">
+          {media._type === 'illustration' && (
             <img
               src={media.asset.url}
               alt={media.alt}
@@ -34,14 +34,14 @@ function Hero({ id, title, media, subtitle }) {
                 aspectRatio: 'calc( attr(width) / attr(height) * 100%)',
               }}
             />
-          </Col>
-        </Row>
-      )}
-      {media._type === 'video' && (
-        <PlayerWrapper>
-          <StyledReactPlayer url={media.url} controls width="100%" height="100%" />
-        </PlayerWrapper>
-      )}
+          )}
+          {media._type === 'video' && (
+            <PlayerWrapper>
+              <StyledReactPlayer url={media.url} controls width="100%" height="100%" />
+            </PlayerWrapper>
+          )}
+        </Col>
+      </Row>
       <BlockContent blocks={subtitle} />
     </Container>
   );
