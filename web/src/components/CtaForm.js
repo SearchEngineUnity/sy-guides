@@ -115,7 +115,7 @@ function CtaForm({ id, title, subtitle, form, disclaimer }) {
             <input
               type="hidden"
               name="subject"
-              value="I have a question or feedback about Sunny Guides"
+              value="I have a question or feedback about Sunny Guides..."
             />
             {form.formFields.map((input) => {
               const { _type, inputType } = input;
