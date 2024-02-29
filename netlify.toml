@@ -8,9 +8,3 @@
 
 [context.preview.environment]
   NODE_ENV = "development"
-
-  [[redirects]]
-  from = "/*"
-  to = "https://techboomers.com"
-  status = 301
-  force = true
